@@ -1,0 +1,24 @@
+@import "../includes/variables";
+
+.i-container {
+  height: 100%;
+  display: flex;
+  margin: 0 auto;
+  max-width: $container-width;
+
+  &.is-vertical {
+    flex-direction: column;
+  }
+}
+
+.i-header {
+  height: $header-height;
+  min-height: $header-height;
+  line-height: $header-height;
+  border-bottom: 1px solid $border-color;
+  box-shadow: 0 0 3px $box-shadow-color;
+
+  .i-container {
+    justify-content: space-between
+  }
+}

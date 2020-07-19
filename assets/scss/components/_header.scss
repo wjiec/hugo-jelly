@@ -1,0 +1,26 @@
+@import "../includes/variables";
+
+.page-header {
+  .left-logo {
+    font-size: 20px;
+    font-family: $artistry-font-family;
+
+    a {
+      color: $font-color;
+    }
+  }
+
+  .right-menu {
+    font-size: 16px;
+
+    li {
+      margin: 0 10px;
+
+      &.menu-active a {
+        cursor: default;
+        pointer-events: none;
+        color: $font-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="{{ .Site.Params.description }}">
+  {{ $options := (dict "targetPath" "css/island.css") }}
+  {{ $style := resources.Get "scss/island.scss" | toCSS $options | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+</head>

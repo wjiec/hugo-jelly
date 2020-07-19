@@ -1,0 +1,25 @@
+{{ define "main" }}
+<main class="page-content i-container is-vertical i-content">
+  <div class="article-container">
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+    {{ range $paginator.Pages }}
+      <article class="i-article">
+        <header class="article-header">
+          <div class="article-title">
+            <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+          </div>
+          <div class="article-metadata">
+            <p>{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
+          </div>
+        </header>
+        <main class="article-summary">
+          {{ .Summary }}
+        </main>
+      </article>
+    {{ end }}
+  </div>
+  <section class="i-pagination">
+    {{ template "_internal/pagination.html" . }}
+  </section>
+</main>
+{{ end }}
