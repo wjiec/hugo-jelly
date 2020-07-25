@@ -15,7 +15,7 @@ $success-color              : #0cce6b;
 $danger-color               : #d64933;
 
 // fonts
-$default-font-family        : -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+$default-font-family        : -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,verdana,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",SimSun,sans-serif;
 $artistry-font-family       : "Rouge Script",cursive, sans-serif;
 
 // buttons
@@ -25,3 +25,8 @@ $button-border-color        : darken($background-color, 10%);
 
 // form
 $form-control-line-height   : 36px;
+
+// scrollbar
+$scrollbar-width            : 8px;
+$scrollbar-height           : 8px;
+$scrollbar-background       : rgba(black, .056);

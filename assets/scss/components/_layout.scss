@@ -22,3 +22,17 @@
     justify-content: space-between
   }
 }
+
+.i-pagination {
+  line-height: 1.5;
+  margin: 0 auto;
+
+  .page-item {
+    margin: 0 6px;
+
+    &.disabled {
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+}

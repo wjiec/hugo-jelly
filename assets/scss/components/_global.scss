@@ -27,15 +27,22 @@ ul, ol, li {
   display: inline-block;
 }
 
+//a, a:hover, a:active, a:visited {
+//  color: $link-color;
+//  letter-spacing: 0.55px;
+//  text-decoration: none;
+//  transition: color linear 0.375s;
+//}
+
 a, a:hover, a:active, a:visited {
-  color: $link-color;
-  letter-spacing: 0.55px;
+  color: inherit;
+  letter-spacing: 1px;
   text-decoration: none;
-  transition: color linear 0.375s;
 }
 
 a:hover {
   color: $font-color;
+  text-decoration: underline;
 }
 
 a[data-disabled] {
@@ -44,7 +51,8 @@ a[data-disabled] {
 }
 
 p {
+  color: $font-color;
   margin: 0;
   font-size: 14px;
-  line-height: 1.5em;
+  line-height: 20px;
 }

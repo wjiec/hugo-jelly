@@ -1,0 +1,15 @@
+@import "../includes/variables";
+
+.page-footer {
+  margin: 50px auto 20px auto;
+  justify-content: center;
+
+  div {
+    color: rgba($font-color, .5);
+    margin: 0 10px;
+
+    p {
+      color: inherit;
+    }
+  }
+}
