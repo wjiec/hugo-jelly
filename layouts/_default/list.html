@@ -1,21 +1,3 @@
 {{ define "main" }}
-<main class="page-content i-container is-vertical i-content">
-  {{ if ne .Params.Banner false }}
-  <div class="description-container">
-    <h2>{{ .Title }}</h2>
-    <div class="description-content">
-      {{ .Content }}
-    </div>
-  </div>
-  {{ end }}
-  <div class="article-container">
-    {{ $paginator := .Paginate .Data.Pages }}
-    {{ range $paginator.Pages }}
-      {{ template "partials/article.html" . }}
-    {{ end }}
-  </div>
-  <section class="i-pagination">
-    {{ template "_internal/pagination.html" . }}
-  </section>
-</main>
+<div>list content</div>
 {{ end }}

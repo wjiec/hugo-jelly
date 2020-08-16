@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{- site.Language.Lang -}}" data-theme="light">
-  {{- partial "head.html" . -}}
-  <body>
-    <div class="header-container">
-      {{- partial "header.html" . -}}
-    </div>
-    <div class="content-container">
-      {{- block "main" . -}}{{- end -}}
-    </div>
-    <div class="footer-container">
-      {{- partial "footer.html" . -}}
-    </div>
-  </body>
+{{- partial "head.html" . -}}
+<body>
+<div class="header-container">
+  <header>{{- partial "layouts/header.html" . -}}</header>
+</div>
+<div class="content-container">
+  <main>{{- block "main" . -}}{{- end -}}</main>
+</div>
+<div class="footer-container">
+  <footer>{{- partial "layouts/footer.html" . -}}</footer>
+</div>
+</body>
 </html>

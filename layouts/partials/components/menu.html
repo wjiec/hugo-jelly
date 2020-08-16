@@ -1,0 +1,9 @@
+<nav>
+  <ul class="menu-list">
+    {{ range .main }}
+    <li class="menu-item">
+      <a href="{{ .URL }}">{{ .Name }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</nav>

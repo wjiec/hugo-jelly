@@ -1,13 +1,6 @@
 {{ define "main" }}
-<main class="page-content i-container is-vertical i-content">
-  <div class="article-container">
-    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
-    {{ range $paginator.Pages }}
-      {{ template "partials/article.html" . }}
-    {{ end }}
-  </div>
-  <section class="i-pagination">
-    {{ template "_internal/pagination.html" . }}
-  </section>
-</main>
+<div class="container">
+  <a href="asdasd">Hello</a>
+  <a href="asdasd">N好啊</a>
+</div>
 {{ end }}

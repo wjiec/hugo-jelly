@@ -1,9 +1,9 @@
 @import "../includes/variables";
 
-.i-container {
-  height: 100%;
+.container {
   display: flex;
   margin: 0 auto;
+  height: 100%;
   max-width: $container-width;
 
   &.is-vertical {
