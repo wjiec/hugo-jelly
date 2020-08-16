@@ -1,5 +1,17 @@
 @import "../includes/variables";
 
+.i-header {
+  height: $header-height;
+  min-height: $header-height;
+  line-height: $header-height;
+  border-bottom: 1px solid $border-color;
+  box-shadow: 0 0 3px $box-shadow-color;
+
+  .i-container {
+    justify-content: space-between
+  }
+}
+
 .page-header {
   .left-logo {
     font-size: 20px;
@@ -21,6 +33,7 @@
         cursor: default;
         pointer-events: none;
         color: $font-color;
+        text-decoration: underline;
       }
     }
   }

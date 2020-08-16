@@ -2,8 +2,12 @@
 <main class="i-container">
   <article class="i-article">
     <header class="article-title">
-      <h3>{{ .Title }}</h3>
+      <h2>{{ .Title }}</h2>
+      <div class="article-metadata">
+        <span>{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+      </div>
     </header>
+
     <main class="article-content">
       <div>{{ .Content }}</div>
     </main>

@@ -3,30 +3,7 @@
   <div class="article-container">
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
     {{ range $paginator.Pages }}
-      <article class="i-article">
-        <header class="article-header">
-          <div class="article-title">
-            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-          </div>
-        </header>
-        <main class="article-content">
-          <div class="article-summary">
-            {{ .Summary }}
-          </div>
-        </main>
-        <footer class="article-footer">
-          <div class="article-metadata">
-            <p>
-              <span class="article-date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-              {{- range .Params.tags -}}
-              <span class="article-tag">
-                <a href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a>
-              </span>
-              {{- end -}}
-            </p>
-          </div>
-        </footer>
-      </article>
+      {{ template "partials/article.html" . }}
     {{ end }}
   </div>
   <section class="i-pagination">

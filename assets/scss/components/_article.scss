@@ -1,5 +1,25 @@
 @import "../includes/variables";
 
+.description-container {
+  margin: 30px auto;
+  text-align: center;
+
+  h2 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  .description-content {
+    font-size: 16px;
+
+    p {
+      line-height: 1.5;
+      font-size: inherit;
+    }
+  }
+}
+
 .i-article {
   margin: 30px;
 }

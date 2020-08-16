@@ -10,29 +10,3 @@
     flex-direction: column;
   }
 }
-
-.i-header {
-  height: $header-height;
-  min-height: $header-height;
-  line-height: $header-height;
-  border-bottom: 1px solid $border-color;
-  box-shadow: 0 0 3px $box-shadow-color;
-
-  .i-container {
-    justify-content: space-between
-  }
-}
-
-.i-pagination {
-  line-height: 1.5;
-  margin: 0 auto;
-
-  .page-item {
-    margin: 0 6px;
-
-    &.disabled {
-      cursor: default;
-      pointer-events: none;
-    }
-  }
-}
