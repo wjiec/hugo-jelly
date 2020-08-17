@@ -2,7 +2,8 @@
 $light-font-color               : #373d3f;
 $light-title-color              : #2a2f31;
 $light-text-color               : #373d3f;
-$light-link-color               : #1486bb;
+$light-primary-color            : #1486bb;
+$light-link-color               : $light-primary-color;
 $light-background-color         : #faf9f9;
 
 $dark-font-color                : #9a2617;
@@ -16,3 +17,12 @@ $mobile-screen-threshold        : 900px;
 $header-height                  : 60px;
 $header-background-color        : #fff;
 $header-text-logo-font          : "Rouge Script",cursive, sans-serif;
+
+// Aside
+$aside-background-color         : #e2e3e4;
+
+
+// Scrollbar
+$scrollbar-width                : 7px;
+$scrollbar-height               : 7px;
+$scrollbar-background-color     : #2b2b2b;

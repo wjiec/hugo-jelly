@@ -2,14 +2,23 @@
 <html lang="{{- site.Language.Lang -}}" data-theme="light">
 {{- partial "head.html" . -}}
 <body>
-<div class="header-container">
-  <header>{{- partial "layouts/header.html" . -}}</header>
-</div>
-<div class="content-container">
-  <main>{{- block "main" . -}}{{- end -}}</main>
-</div>
-<div class="footer-container">
-  <footer>{{- partial "layouts/footer.html" . -}}</footer>
+
+<div class="page-wrapper">
+  <div class="aside-container">
+    <aside>{{- partial "layouts/aside.html" . -}}</aside>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="header-container">
+      <header>{{- partial "layouts/header.html" . -}}</header>
+    </div>
+    <div class="content-container">
+      <main>{{- block "main" . -}}{{- end -}}</main>
+    </div>
+    <div class="footer-container">
+      <footer>{{- partial "layouts/footer.html" . -}}</footer>
+    </div>
+  </div>
 </div>
 </body>
 </html>
