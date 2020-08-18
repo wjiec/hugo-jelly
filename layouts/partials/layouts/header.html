@@ -1,9 +1,13 @@
-<div class="aside-handler"><div class="handler-container"><i></i><i></i><i></i></div></div>
+<div class="aside-handler">
+  <label for="nav-trigger">
+    <div class="handler-container"><i></i><i></i><i></i></div>
+  </label>
+</div>
 <div class="container">
   <div class="text-logo">
     <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
   </div>
   <div class="menu">
-    {{ partial "components/menu.html" .Site.Menus }}
+  {{ partial "components/menu.html" .Site.Menus.main }}
   </div>
 </div>

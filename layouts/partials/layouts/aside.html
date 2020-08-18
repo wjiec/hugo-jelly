@@ -1,1 +1,4 @@
-<div class="menu">{{ partial "components/menu.html" .Site.Menus }}</div>
+<div class="aside-menu">
+  {{ $menus := default .Site.Menus.main .Site.Menus.aside }}
+  {{ partial "components/menu.html" $menus }}
+</div>

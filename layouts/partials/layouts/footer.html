@@ -1,1 +1,17 @@
-<div class="container">footer</div>
+<div class="container">
+  <div>
+    {{ if .Site.Params.Author }}
+    <span class="copyright">@{{ .Site.Params.Author }} {{ now.Format "2006" }}</span>
+    {{ end }}
+    {{ if .Site.Params.BestWish }}
+    <span class="best-wish">{{ .Site.Params.BestWish }}</span>
+    {{ end }}
+  </div>
+  <div>
+    {{ if .Site.Params.icpLicensing }}
+    <span class="icp-licensing">
+      <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">{{ .Site.Params.icpLicensing }}</a>
+    </span>
+    {{ end }}
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="container list-container">
+  <div class="article-container">
+  {{ range .Paginator.Pages }}
+    {{ partial "components/article.html" . }}
+  {{ end }}
+  </div>
+  <div class="pagination-container">
+    {{ template "_internal/pagination.html" . }}
+  </div>
+</div>

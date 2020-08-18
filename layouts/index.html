@@ -1,6 +1,4 @@
 {{ define "main" }}
-<div class="container">
-  <a href="asdasd">Hello</a>
-  <a href="asdasd">N好啊</a>
-</div>
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+{{ partial "components/article-list.html" . }}
 {{ end }}

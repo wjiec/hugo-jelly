@@ -1,0 +1,19 @@
+@import "../includes/variables";
+
+main {
+  .list-container {
+    flex-direction: column;
+  }
+
+  .article-title {
+    a {
+      box-shadow: none;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-screen-threshold) {
+  main {
+    padding: 20px;
+  }
+}

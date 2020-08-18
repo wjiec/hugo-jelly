@@ -1,0 +1,12 @@
+<article>
+  <div class="header">
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <div class="summary">{{ .Summary }}</div>
+  </div>
+  <div class="metadata">
+    <span class="create-time">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+    {{- range .Params.tags -}}
+    <span class="tag"><a href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a></span>
+    {{- end -}}
+  </div>
+</article>

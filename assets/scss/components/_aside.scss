@@ -1,3 +1,15 @@
 @import "../includes/variables";
 
+aside {
+  margin-top: $header-height;
 
+  .aside-menu {
+    font-size: 18px;
+    line-height: 40px;
+    padding: 0 40px;
+
+    a {
+      box-shadow: none;
+    }
+  }
+}

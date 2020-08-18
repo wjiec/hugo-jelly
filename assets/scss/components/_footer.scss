@@ -1,0 +1,26 @@
+@import "../includes/variables";
+
+footer {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-family: verdana,sans-serif;
+
+  .container {
+    flex-direction: column;
+    justify-content: center;
+
+    div {
+      text-align: center;
+
+      span {
+        margin-left: 20px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
