@@ -1,5 +1,18 @@
 {{ define "main" }}
 <div class="container">
-  <div>single content</div>
+  <article class="full">
+    <div class="header">
+      <h3>{{ .Title }}</h3>
+    </div>
+    <div class="metadata">
+      <span class="create-time">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+      {{- range .Params.tags -}}
+      <span class="tag"><a href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a></span>
+      {{- end -}}
+    </div>
+    <section class="content">
+      {{ .Content }}
+    </section>
+  </article>
 </div>
 {{ end }}

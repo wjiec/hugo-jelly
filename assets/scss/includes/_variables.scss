@@ -5,8 +5,13 @@ $light-text-color               : #373d3f;
 $light-primary-color            : #1486bb;
 $light-link-color               : $light-primary-color;
 $light-background-color         : #faf9f9;
-
 $dark-font-color                : #9a2617;
+$default-text-font              : -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,verdana,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",SimSun,sans-serif;
+$artistry-text-font             : "Rouge Script",cursive,sans-serif;
+$monospaced-text-font           : Verdana,"Fira Code",sans-serif;
+
+// Global
+$global-text-font               : $default-text-font;
 
 
 // Layout
@@ -16,11 +21,18 @@ $mobile-screen-threshold        : 900px;
 // Header
 $header-height                  : 60px;
 $header-background-color        : #fff;
-$header-text-logo-font          : "Rouge Script",cursive, sans-serif;
+$header-text-logo-font          : $artistry-text-font;
 
 // Aside
 $aside-width                    : 240px;
-$aside-background-color         : #e2e3e4;
+$aside-background-color         : #e3e7e7;
+
+// Content
+$content-entry-summary-color    : #5d686b;
+$content-entry-metadata-font    : $monospaced-text-font;
+
+// Footer
+$footer-text-font               : $monospaced-text-font;
 
 
 // Scrollbar

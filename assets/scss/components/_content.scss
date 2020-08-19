@@ -5,9 +5,100 @@ main {
     flex-direction: column;
   }
 
-  .article-title {
-    a {
-      box-shadow: none;
+  .pagination-container {
+    margin: 50px auto 30px auto;
+  }
+}
+
+article.entry {
+  margin-top: 50px;
+
+  .header {
+    h3 {
+      font-size: 22px;
+      margin: 0 0 10px;
+
+      a {
+        font-weight: 400;
+        font-style: normal;
+      }
+    }
+
+    .summary {
+      font-size: 16px;
+      color: $content-entry-summary-color;
+
+      p {
+        margin: 0;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .metadata {
+    font-size: 14px;
+    margin-top: 20px;
+    font-family: $content-entry-metadata-font;
+
+    .tag {
+      margin-left: 10px;
+
+      a:before {
+        content: '#';
+      }
+    }
+  }
+}
+
+.pagination-container {
+  .pagination {
+    .page-item {
+      float: left;
+      margin: 0 20px;
+      text-align: center;
+      line-height: 1.5;
+      cursor: pointer;
+
+      a {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        font-style: normal;
+      }
+
+      &.disabled {
+        cursor: default;
+
+        a {
+          box-shadow: none;
+        }
+      }
+
+      &:first-child, &:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+.page-item {
+  a[aria-label="Previous"] {
+    span {
+      display: none;
+    }
+
+    &:after {
+      content: '←';
+    }
+  }
+
+  a[aria-label="Next"] {
+    span {
+      display: none;
+    }
+
+    &:after {
+      content: '→';
     }
   }
 }
@@ -15,5 +106,36 @@ main {
 @media screen and (max-width: $mobile-screen-threshold) {
   main {
     padding: 20px;
+
+    article.entry {
+      &:first-child {
+        margin-top: 30px;
+      }
+
+      .metadata {
+        .tag {
+          display: none;
+
+          &:nth-child(2) {
+            display: inline;
+          }
+        }
+      }
+    }
+
+    .pagination-container {
+      margin: 50px auto 0 auto;
+
+      .pagination {
+        .page-item {
+          margin: 0 10px;
+
+          a {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
   }
 }
