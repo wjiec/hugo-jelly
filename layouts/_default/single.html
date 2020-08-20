@@ -9,9 +9,17 @@
       {{- range .Params.tags -}}
       <span class="tag"><a href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a></span>
       {{- end -}}
+      <span class="words">{{ .WordCount }}words</span>
+      <span class="times">{{ .ReadingTime }}minutes</span>
     </div>
     <section class="content">
       {{ .Content }}
+    </section>
+    <section class="table-of-contents">
+      {{ if or (gt .WordCount ( default 350 .Site.Params.TocMinWordCount ) ) (.Params.toc) }}
+      <h3>Table of contents</h3>
+      {{ end }}
+      <div>{{ .TableOfContents }}</div>
     </section>
   </article>
 </div>

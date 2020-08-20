@@ -1,0 +1,22 @@
+@import "../includes/variables";
+
+@mixin markdown {
+  ul, li {
+    list-style: inherit;
+  }
+
+  ul {
+    padding-left: 30px;
+  }
+
+  blockquote {
+    margin: 0;
+    padding-left: 1rem;
+    border-left: .25rem solid $content-blockquote-border-color;
+  }
+
+  p code, li code {
+    margin: 0 5px;
+    border-bottom: 1px solid $content-blockquote-border-color;
+  }
+}

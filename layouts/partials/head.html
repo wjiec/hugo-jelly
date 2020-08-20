@@ -3,7 +3,7 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="{{ .Site.Params.Description }}">
-  <meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'none'; style-src 'self'; child-src 'none';">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline'; child-src 'none';">
   {{- $options := (dict "targetPath" "css/highway.css") -}}
   {{- $style := resources.Get "scss/highway.scss" | toCSS $options | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
