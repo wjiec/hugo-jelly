@@ -1,0 +1,42 @@
+baseURL = "https://gohugo.io"
+title = "Hugo Themes"
+author = "Steve Francia"
+copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
+paginate = 3
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+
+[params]
+  author = "Jayson Wang"
+  bestWish = "❤︎You're the best! ❤︎"
+  mainSections = ["post", "article"]
+  icpLicensing = ""
+  description = "this is a website description"
+  keywords = ["blog", "hugo"]
+
+[markup]
+
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = true
+    style = "solarized-light"
+
+
+[menu]
+
+  [[menu.main]]
+  name = "Home"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[menu.main]]
+  name = "Posts"
+  weight = 200
+  identifier = "posts"
+  url = "/post/"

@@ -4,7 +4,7 @@
 name = "Highway"
 license = "MIT"
 licenselink = "https://github.com/wjiec/hugo-highway/blob/master/LICENSE"
-description = "Highway is a clean hugo theme"
+description = "Highway is a simple and clean hugo theme"
 homepage = "https://github.com/wjiec/hugo-highway"
 tags = ["blog", "responsive"]
 features = ["blog", "responsive"]
