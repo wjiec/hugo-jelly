@@ -6,6 +6,7 @@ paginate = 3
 languageCode = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
+theme = "hugo-highway"
 
 [params]
   author = "Jayson Wang"
