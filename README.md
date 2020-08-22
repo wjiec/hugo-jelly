@@ -10,6 +10,7 @@ Hugo-Highway is a simple and clean hugo theme.
  * Responsive
  * Navigation items
  * Pagination
+ * No Javascript
  * MIT License
 
 
