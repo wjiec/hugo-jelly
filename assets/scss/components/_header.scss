@@ -4,9 +4,9 @@ header {
   height: $header-height;
   background-color: var(--bg-primary-color);
   box-shadow: var(--shadow-small);
-  padding: 0 20px;
 
   .container {
+    padding: 0 20px;
     line-height: $header-height;
     justify-content: space-between;
   }
@@ -32,13 +32,34 @@ header {
     a:hover, a.activate {
       text-decoration: none;
       color: var(--text-activated-color);
-      border-bottom: 2px solid var(--text-unactivated-color);
+      border-bottom: 2px solid var(--border-primary-color);
     }
   }
 
   .menu-item {
     float: left;
     margin-left: 25px;
+
+    &.active {
+      border-bottom: 2px solid var(--text-link-color);
+
+      a {
+        pointer-events: none;
+        color: var(--text-activated-color);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-screen-width) {
+  header {
+    .logo {
+      width: 100%;
+      text-align: center;
+    }
+    .menu {
+      display: none;
+    }
   }
 }
 

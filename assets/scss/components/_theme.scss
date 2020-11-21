@@ -12,6 +12,8 @@
   --shadow-small: #{$light-shadow-small};
   --shadow-medium: #{$light-shadow-medium};
   --shadow-large: #{$light-shadow-large};
+  --border-primary-color: #{$light-border-primary-color};
+  --border-secondary-color: #{$light-border-secondary-color};
 }
 
 :root[data-theme="dark"] {
