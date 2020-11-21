@@ -6,17 +6,17 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba($scrollbar-background-color, .025);
+  background: rgba(var(--scrollbar-bg-color), .025);
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: rgba($scrollbar-background-color, 0.2);
+  background: rgba(var(--scrollbar-bg-color), 0.2);
   transition: background .75s linear;
 }
 
 ::-webkit-scrollbar-thumb:window-inactive,
 ::-webkit-scrollbar-thumb:hover,
 ::-webkit-scrollbar-thumb:active {
-  background: rgba($scrollbar-background-color, .25);
+  background: rgba(var(--scrollbar-bg-color), .25);
 }

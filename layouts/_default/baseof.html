@@ -3,23 +3,22 @@
 {{- partial "head.html" . -}}
 <body>
 
-<div class="page-wrapper">
-  <input type="checkbox" id="nav-trigger">
-  <div class="aside-container">
+<div id="app">
+  <div class="aside-container" style="display: none;">
     <aside>{{- partial "layouts/aside.html" . -}}</aside>
   </div>
-
   <div class="content-wrapper">
     <div class="header-container">
       <header>{{- partial "layouts/header.html" . -}}</header>
     </div>
-    <div class="content-container">
-      <main>{{- block "main" . -}}{{- end -}}</main>
-    </div>
-    <div class="footer-container">
-      <footer>{{- partial "layouts/footer.html" . -}}</footer>
-    </div>
+<!--    <div class="content-container">-->
+<!--      <main>{{- block "main" . -}}{{- end -}}</main>-->
+<!--    </div>-->
+<!--    <div class="footer-container">-->
+<!--      <footer>{{- partial "layouts/footer.html" . -}}</footer>-->
+<!--    </div>-->
   </div>
 </div>
+
 </body>
 </html>

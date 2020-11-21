@@ -1,7 +1,9 @@
-<nav>
+<nav class="menu">
+  {{ $ctx := .ctx }}
+  {{ $menu := .menu }}
   <ul class="menu-list">
-    {{ range . }}
-    <li class="menu-item">
+    {{ range (index $ctx.Site.Menus $menu) }}
+    <li class="menu-item {{ if or ($ctx.IsMenuCurrent $menu .) ($ctx.HasMenuCurrent $menu .) }}active{{ end }}">
       <a href="{{ .URL }}">{{ .Name }}</a>
     </li>
     {{ end }}

@@ -1,4 +1,7 @@
 <div class="aside-menu">
-  {{ $menus := default .Site.Menus.main .Site.Menus.aside }}
-  {{ partial "components/menu.html" $menus }}
+  {{ if .Site.Menus.aside }}
+    {{ partial "components/menu.html" (dict "ctx" . "menu" "aside") }}
+  {{ else }}
+    {{ partial "components/menu.html" (dict "ctx" . "menu" "main") }}
+  {{ end }}
 </div>
