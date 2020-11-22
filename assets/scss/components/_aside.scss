@@ -3,13 +3,16 @@
 aside {
   margin-top: $header-height;
 
-  .aside-menu {
+  .container {
     font-size: 18px;
     line-height: 40px;
-    padding: 0 40px;
 
-    a {
-      box-shadow: none;
+    .menu-list, .menu-item {
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
+
+    padding: 0 40px;
   }
 }

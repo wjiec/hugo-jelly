@@ -1,5 +1,11 @@
 @import "../includes/variables";
 
+:root {
+  --aside-width: 240px;
+  --aside-shift: -240px;
+}
+
+//noinspection DuplicatedCode
 :root[data-theme="light"] {
   --text-primary-color: #{$light-text-primary-color};
   --text-secondary-color: #{$light-text-secondary-color};
@@ -9,6 +15,9 @@
   --bg-primary-color: #{$light-bg-primary-color};
   --bg-secondary-color: #{$light-bg-secondary-color};
   --scrollbar-bg-color: #{$light-scrollbar-bg-color};
+  --scrollbar-bg-color-025: rgba(#{$light-scrollbar-bg-color}, .025);
+  --scrollbar-bg-color-20: rgba(#{$light-scrollbar-bg-color}, .2);
+  --scrollbar-bg-color-25: rgba(#{$light-scrollbar-bg-color}, .25);
   --shadow-small: #{$light-shadow-small};
   --shadow-medium: #{$light-shadow-medium};
   --shadow-large: #{$light-shadow-large};
@@ -16,7 +25,21 @@
   --border-secondary-color: #{$light-border-secondary-color};
 }
 
+//noinspection DuplicatedCode
 :root[data-theme="dark"] {
+  --text-primary-color: #{$dark-text-primary-color};
+  --text-secondary-color: #{$dark-text-secondary-color};
+  --text-unactivated-color: #{$dark-text-unactivated-color};
+  --text-activated-color: #{$dark-text-activated-color};
+  --text-link-color: #{$dark-text-link-color};
+  --bg-primary-color: #{$dark-bg-primary-color};
+  --bg-secondary-color: #{$dark-bg-secondary-color};
+  --scrollbar-bg-color: #{$dark-scrollbar-bg-color};
+  --shadow-small: #{$dark-shadow-small};
+  --shadow-medium: #{$dark-shadow-medium};
+  --shadow-large: #{$dark-shadow-large};
+  --border-primary-color: #{$dark-border-primary-color};
+  --border-secondary-color: #{$dark-border-secondary-color};
 }
 
 :root[data-theme="github"] {

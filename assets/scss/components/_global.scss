@@ -23,7 +23,8 @@ a, a:visited, a:hover, a:active {
   color: var(--text-link-color);
   line-height: 1.25;
   text-decoration: none;
-  background-color: initial;
+  background-color: transparent;
+  outline: none;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -31,18 +32,21 @@ a:hover, a:active {
   text-decoration: underline;
 }
 
-[hidden] {
-  display: none;
+button {
+  border: 0;
+  display: inline-block;
+  padding: 0;
+  border-radius: 0;
+  text-transform: none;
+  overflow: visible;
+  font-size: inherit;
+  user-select: none;
+  background-color: initial;
+  -webkit-appearance: button;
 }
 
-.container {
-  display: flex;
-  margin: 0 auto;
-  max-width: $container-max-width;
-
-  &.vertical {
-    flex-direction: column;
-  }
+[hidden] {
+  display: none;
 }
 
 //h1 {

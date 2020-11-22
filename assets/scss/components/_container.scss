@@ -1,0 +1,51 @@
+@import "../includes/variables";
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  max-width: $container-max-width;
+
+  &.vertical {
+    flex-direction: column;
+  }
+}
+
+.aside-container {
+  position: fixed;
+  height: 100vh;
+  width: var(--aside-width);
+  overflow-y: scroll;
+  transform: translateX(var(--aside-shift));
+  transition: transform .25s linear;
+  background-color: var(--border-secondary-color);
+  box-shadow: inset -1px 1px 5px rgba(0,0,0,.25);
+}
+
+.content-wrapper {
+  transform: translateX(0);
+  transition: transform .25s linear;
+}
+
+.header-container {
+  position: sticky;
+  top: 0;
+}
+
+#app.show-aside {
+  .aside-container {
+    transform: translateX(0);
+  }
+
+  .content-wrapper {
+    transform: translateX(var(--aside-width));
+  }
+}
+
+@media screen and (min-width: $mobile-screen-width) {
+  .aside-container {
+    transform: translateX(var(--aside-shift)) !important;
+  }
+  .content-wrapper {
+    transform: translateX(0) !important;
+  }
+}

@@ -1,13 +1,18 @@
 @import "../includes/variables";
 
 header {
+  user-select: none;
   height: $header-height;
   background-color: var(--bg-primary-color);
   box-shadow: var(--shadow-small);
+  position: relative;
+  overflow: hidden;
 
   .container {
     padding: 0 20px;
     line-height: $header-height;
+    height: $header-height;
+    overflow: hidden;
     justify-content: space-between;
   }
 
@@ -24,15 +29,17 @@ header {
 
     a {
       padding: 16px 0;
+      display: inline-block;
+      height: $header-height;
       color: var(--text-unactivated-color);
-      border-bottom: 2px solid transparent;
+      border-bottom: 4px solid transparent;
       transition: all .25s linear;
     }
 
     a:hover, a.activate {
       text-decoration: none;
       color: var(--text-activated-color);
-      border-bottom: 2px solid var(--border-primary-color);
+      border-bottom: 4px solid var(--border-primary-color);
     }
   }
 
@@ -40,13 +47,34 @@ header {
     float: left;
     margin-left: 25px;
 
-    &.active {
-      border-bottom: 2px solid var(--text-link-color);
+    &.active a {
+      pointer-events: none;
+      color: var(--text-activated-color);
+      border-bottom: 4px solid var(--text-link-color);
+    }
+  }
 
-      a {
-        pointer-events: none;
-        color: var(--text-activated-color);
-      }
+  .toggle {
+    display: none;
+    cursor: pointer;
+    color: var(--text-primary-color);
+    justify-content: space-around;
+
+    svg {
+      fill: currentColor;
+    }
+  }
+
+  .theme-toggle {
+    right: 20px;
+    position: absolute;
+    display: flex;
+    height: calc(2 * #{$header-height});
+    flex-direction: column;
+    transition: transform .25s linear;
+
+    &[data-icon="dark"] {
+      transform: translateY(-$header-height);
     }
   }
 }
@@ -60,111 +88,14 @@ header {
     .menu {
       display: none;
     }
+    .toggle {
+      display: flex;
+    }
   }
 }
 
-//header {
-//  height: $header-height;
-//  background-color: $header-background-color;
-//  box-shadow: 0 0 5px rgba(0, 0, 0, .25);
-//
-//  .text-logo {
-//    font-size: 22px;
-//    line-height: $header-height;
-//    font-family: $header-text-logo-font;
-//
-//    a, a:hover {
-//      box-shadow: none;
-//      font-style: normal;
-//    }
-//  }
-//
-//  .menu {
-//    font-size: 18px;
-//    margin-left: auto;
-//    line-height: $header-height;
-//
-//    li {
-//      float: left;
-//      margin-left: 20px;
-//
-//      &:first-child {
-//        margin-left: 0;
-//      }
-//    }
-//  }
-//}
-//
-//.aside-handler {
-//  display: none;
-//
-//  label, label:active {
-//    -webkit-tap-highlight-color: transparent;
-//  }
-//
-//  .handler-container {
-//    width: $header-height;
-//    height: $header-height;
-//    position: absolute;
-//    left: 0;
-//    top: 0;
-//    padding: 15px;
-//    display: flex;
-//    flex-direction: column;
-//    justify-content: space-around;
-//    cursor: pointer;
-//
-//    i {
-//      width: 30px;
-//      height: 3px;
-//      border-radius: 2px;
-//      background-color: $light-primary-color;
-//      display: inline-block;
-//      transition: all cubic-bezier(.33,-0.51,.61,1.47) .25s;
-//
-//      &:first-child {
-//        width: 50%;
-//      }
-//
-//      &:last-child {
-//        position: relative;
-//        width: 50%;
-//        left: 50%;
-//      }
-//    }
-//  }
-//}
-//
-//#nav-trigger:checked ~ .content-wrapper .handler-container {
-//  i {
-//    &:first-child {
-//      transform: rotate(45deg) translateZ(0) translateX(5px) translateY(1.732px) !important;
-//    }
-//
-//    &:nth-child(2) {
-//      transition-delay: .15s;
-//      transform: rotate(-45deg);
-//    }
-//
-//    &:last-child {
-//      transform: rotate(45deg) translateX(-5px) translateY(-1.732px);
-//    }
-//  }
-//}
-//
-//@media screen and (max-width: $mobile-screen-threshold) {
-//  header {
-//    .text-logo {
-//      width: 100%;
-//      text-align: center;
-//    }
-//
-//    .menu {
-//      display: none;
-//    }
-//  }
-//
-//  .aside-handler {
-//    display: block;
-//  }
-//}
+@media screen and (max-width: 950px) {
+  .menu-item:last-child {
+    margin-right: 45px;
+  }
+}
