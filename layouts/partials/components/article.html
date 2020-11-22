@@ -1,12 +1,16 @@
-<article class="entry">
-  <div class="header">
-    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-    <div class="summary">{{ .Summary }}</div>
-  </div>
+<article class="container">
   <div class="metadata">
-    <span class="create-time">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-    {{- range .Params.tags -}}
-    <span class="tag"><a href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a></span>
-    {{- end -}}
+    <p class="datetime">{{ .Date.Format "January 2, 2006" }}</p>
+  </div>
+  <div class="information">
+    <div class="tags">
+      {{- range .Params.tags -}}
+      <span class="tag"><a href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a></span>
+      {{- end -}}
+    </div>
+    <div class="article">
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <div class="summary">{{ .Summary }}</div>
+    </div>
   </div>
 </article>

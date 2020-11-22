@@ -26,7 +26,8 @@ $dark-shadow-medium            : 0 3px 6px rgba(#959da5, 0.15);
 $dark-shadow-large             : 0 8px 24px rgba(#959da5, 0.2);
 
 // Fonts
-$text-font-family               : -apple-system,BlinkMacSystemFont,Segoe UI,"Helvetica Neue",Helvetica,verdana,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",SimSun,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+$text-font-family               : -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,verdana,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+$monospaced-text-font-family    : SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace,sans-serif;
 
 // Scrollbar
 $scrollbar-width                : 7px;
@@ -72,7 +73,6 @@ $light-background-color         : #fcfdfd;
 $dark-font-color                : #9a2617;
 $default-text-font              : -apple-system,BlinkMacSystemFont,Segoe UI,"Helvetica Neue",Helvetica,verdana,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",SimSun,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
 $artistry-text-font             : "Rouge Script",cursive,sans-serif;
-$monospaced-text-font           : Verdana,"Fira Code",sans-serif;
 
 // Global
 $global-text-font               : $default-text-font;
@@ -83,11 +83,11 @@ $aside-background-color         : #e3e7e7;
 
 // Content
 $content-entry-summary-color    : #5d686b;
-$content-entry-metadata-font    : $monospaced-text-font;
+$content-entry-metadata-font    : $monospaced-text-font-family;
 $content-blockquote-border-color : #d3d7d7;
 
 // Footer
-$footer-text-font               : $monospaced-text-font;
+$footer-text-font               : $monospaced-text-font-family;
 
 
 // Scrollbar
