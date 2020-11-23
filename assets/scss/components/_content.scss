@@ -16,7 +16,7 @@ main {
     margin-bottom: 50px !important;
 
     .metadata {
-      width: 35%;
+      width: 33%;
       font-size: 14px;
       color: var(--text-secondary-color);
       font-family: $monospaced-text-font-family;
@@ -28,6 +28,7 @@ main {
     }
 
     .information {
+      max-width: 67%;
       flex-grow: 1;
 
       .tags {
@@ -63,12 +64,45 @@ main {
   }
 }
 
+.pagination {
+  margin: 30px auto;
+  width: 100%;
+  text-align: center;
+  justify-content: space-around;
+  user-select: none;
+
+  a {
+    display: inline-block;
+    cursor: default;
+    color: var(--text-secondary-color);
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    svg {
+      fill: var(--text-secondary-color);
+    }
+
+    &[href] {
+      cursor: pointer;
+
+      svg {
+        fill: var(--text-primary-color);
+      }
+    }
+
+
+  }
+}
+
 @media screen and(max-width: $mobile-screen-width) {
   main article {
     flex-direction: column;
 
-    .metadata {
+    .metadata, .information {
       width: 100%;
+      max-width: 100%;
     }
 
     .metadata, .information .tags {

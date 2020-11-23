@@ -1,10 +1,22 @@
-<div class="container">
+<div class="container vertical">
   <div class="article-list">
   {{ range .Paginator.Pages }}
     {{ partial "components/article.html" . }}
   {{ end }}
   </div>
-  <div class="pagination-container">
-    {{ template "_internal/pagination.html" . }}
+  {{ if gt .Paginator.TotalPages 1 }}
+  <div class="pagination container">
+    <a {{ if .Paginator.HasPrev }}href="{{ .Paginator.Prev.URL }}"{{ end }} class="prev">
+      <svg width="24" viewBox="0 0 16 16">
+        <path d="M12.077.6351L4.7121 8l7.3649 7.3649a.372.372 90 01-.5261.5261L3.923 8.2631a.372.372 90 010-.5261L11.5509.109a.372.372 90 01.5261.5261z"></path>
+      </svg>
+    </a>
+    <a>{{ .Paginator.PageNumber }}</a>
+    <a {{ if .Paginator.HasNext }}href="{{ .Paginator.Next.URL }}"{{ end }} class="next">
+      <svg width="24" viewBox="0 0 16 16">
+        <path d="M3.923 15.3649l7.3649-7.3649L3.923.6351A.372.372 90 014.4491.109l7.628 7.628a.372.372 90 010 .5261L4.4491 15.891A.372.372 90 013.923 15.3649z"></path>
+      </svg>
+    </a>
   </div>
+  {{ end }}
 </div>
