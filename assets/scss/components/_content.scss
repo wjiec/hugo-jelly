@@ -4,7 +4,7 @@
 main {
   margin-top: 60px;
 
-  .container {
+  & > .container {
     padding: 0 20px;
   }
 
@@ -13,28 +13,20 @@ main {
   }
 
   article {
-    margin-bottom: 50px !important;
+    margin-bottom: 60px !important;
 
     .metadata {
-      width: 33%;
       font-size: 14px;
       color: var(--text-secondary-color);
       font-family: $monospaced-text-font-family;
       line-height: 30px;
-    }
 
-    p {
-      margin: 0;
-    }
-
-    .information {
-      max-width: 67%;
-      flex-grow: 1;
-
+      .datetime {
+        margin: 0;
+        width: 33%;
+      }
       .tags {
-        font-size: 14px;
-        line-height: 30px;
-        font-family: $monospaced-text-font-family;
+        width: 67%;
 
         .tag {
           margin-right: 15px;
@@ -42,23 +34,37 @@ main {
           a {
             font-family: inherit;
             color: var(--text-secondary-color);
+
+            &::before {
+              content: '#';
+              letter-spacing: 1px;
+              color: var(--border-primary-color);
+            }
           }
         }
       }
+    }
 
-      .article {
-        h3 {
-          font-size: 20px;
-          margin: 10px 0 15px;
+    .content {
+      width: 67%;
+      left: 33%;
+      position: relative;
 
-          a {
-            color: var(--text-primary-color);
-          }
+      h3 {
+        font-size: 20px;
+        margin: 0 0 15px;
+
+        a {
+          color: var(--text-primary-color);
         }
+      }
 
-        .summary {
-          color: var(--text-secondary-color);
-        }
+      .summary {
+        color: var(--text-secondary-color);
+      }
+
+      &.no-tag {
+        top: -30px;
       }
     }
   }
@@ -91,22 +97,23 @@ main {
         fill: var(--text-primary-color);
       }
     }
-
-
   }
 }
 
 @media screen and(max-width: $mobile-screen-width) {
   main article {
-    flex-direction: column;
-
-    .metadata, .information {
-      width: 100%;
-      max-width: 100%;
+    .metadata {
+      .datetime {
+        margin-right: 20px;
+      }
+      .datetime, .tags {
+        width: auto;
+      }
     }
-
-    .metadata, .information .tags {
-      line-height: 1.5;
+    .content {
+      width: 100%;
+      left: 0;
+      top: 0 !important;
     }
   }
 }

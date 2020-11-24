@@ -1,16 +1,14 @@
-<article class="container">
-  <div class="metadata">
+<article>
+  <div class="metadata container">
     <p class="datetime">{{ .Date.Format "January 2, 2006" }}</p>
-  </div>
-  <div class="information">
     <div class="tags">
       {{- range .Params.tags -}}
       <span class="tag"><a href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a></span>
       {{- end -}}
     </div>
-    <div class="article">
-      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-      <div class="summary">{{ .Summary }}</div>
-    </div>
+  </div>
+  <div class="content{{ if not .Params.tags }} no-tag{{ end }}">
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <div class="summary">{{ .Summary }}</div>
   </div>
 </article>
