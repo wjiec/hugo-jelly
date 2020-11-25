@@ -7,9 +7,6 @@
   {{- $options := (dict "targetPath" "css/style.css") -}}
   {{- $style := resources.Get "scss/highway.scss" | toCSS $options | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
-  {{- $buildOptions := (dict "targetPath" "js/main.js" "minify" true "target" "es2015") -}}
-  {{- $js := resources.Get "javascript/highway.js" | js.Build $buildOptions -}}
-  <script src="{{ $js.Permalink }}"></script>
   {{ if .IsHome }}
   <title>{{ .Site.Title }}</title>
   {{ else }}

@@ -5,7 +5,13 @@ footer {
   line-height: 1.5;
   margin-top: 30px;
   margin-bottom: 10px;
-  font-family: $footer-text-font;
+  color: var(--text-tertiary-color);
+  letter-spacing: .5px;
+  user-select: none;
+
+  a {
+    color: inherit;
+  }
 
   .container {
     flex-direction: column;

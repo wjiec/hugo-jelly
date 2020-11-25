@@ -9,6 +9,7 @@
 :root[data-theme="light"] {
   --text-primary-color: #{$light-text-primary-color};
   --text-secondary-color: #{$light-text-secondary-color};
+  --text-tertiary-color: #{$light-text-tertiary-color};
   --text-unactivated-color: #{$light-text-unactivated-color};
   --text-activated-color: #{$light-text-activated-color};
   --text-link-color: #{$light-text-link-color};
@@ -29,6 +30,7 @@
 :root[data-theme="dark"] {
   --text-primary-color: #{$dark-text-primary-color};
   --text-secondary-color: #{$dark-text-secondary-color};
+  --text-tertiary-color: #{$dark-text-tertiary-color};
   --text-unactivated-color: #{$dark-text-unactivated-color};
   --text-activated-color: #{$dark-text-activated-color};
   --text-link-color: #{$dark-text-link-color};

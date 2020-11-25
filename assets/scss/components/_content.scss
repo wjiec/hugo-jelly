@@ -46,8 +46,6 @@ main {
     }
 
     .content {
-      width: 67%;
-      left: 33%;
       position: relative;
 
       h3 {
@@ -61,10 +59,6 @@ main {
 
       .summary {
         color: var(--text-secondary-color);
-      }
-
-      &.no-tag {
-        top: -30px;
       }
     }
   }
@@ -109,11 +103,6 @@ main {
       .datetime, .tags {
         width: auto;
       }
-    }
-    .content {
-      width: 100%;
-      left: 0;
-      top: 0 !important;
     }
   }
 }

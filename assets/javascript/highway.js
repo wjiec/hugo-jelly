@@ -44,9 +44,8 @@ function listenAsideToggleEvent() {
   }
 }
 
+toggleTheme(getDefaultTheme());
 document.addEventListener('DOMContentLoaded', () => {
-  toggleTheme(getDefaultTheme());
-
   listenThemeToggleEvent();
   listenAsideToggleEvent();
 });
