@@ -25,21 +25,23 @@ main {
         margin: 0;
         width: 33%;
       }
-      .tags {
-        width: 67%;
+    }
 
-        .tag {
-          margin-right: 15px;
+    @at-root
+    .tags {
+      width: 67%;
 
-          a {
-            font-family: inherit;
-            color: var(--text-secondary-color);
+      .tag {
+        margin-right: 15px;
 
-            &::before {
-              content: '#';
-              letter-spacing: 1px;
-              color: var(--border-primary-color);
-            }
+        a {
+          font-family: inherit;
+          color: var(--text-secondary-color);
+
+          &::before {
+            content: '#';
+            letter-spacing: 1px;
+            color: var(--border-primary-color);
           }
         }
       }
@@ -47,6 +49,8 @@ main {
 
     .content {
       position: relative;
+      line-height: 1.5;
+      font-size: 16px;
 
       h3 {
         font-size: 20px;
@@ -60,6 +64,24 @@ main {
       .summary {
         color: var(--text-secondary-color);
       }
+    }
+  }
+
+  article.fully {
+    overflow: hidden;
+
+    .metadata {
+      div {
+        width: auto;
+        margin-right: 20px;
+      }
+    }
+
+    .content {
+      line-height: 1.5;
+      margin-top: 50px;
+
+      @include markdown();
     }
   }
 }
