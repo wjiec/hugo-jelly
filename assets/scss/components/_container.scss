@@ -1,15 +1,5 @@
 @import "../includes/variables";
 
-.container {
-  display: flex;
-  margin: 0 auto;
-  max-width: $container-max-width;
-
-  &.vertical {
-    flex-direction: column;
-  }
-}
-
 .aside-container {
   position: fixed;
   height: 100vh;

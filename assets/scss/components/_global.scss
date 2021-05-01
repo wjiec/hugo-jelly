@@ -39,3 +39,15 @@ a, a:visited, a:hover, a:active {
 a:hover, a:active {
   text-decoration: underline;
 }
+
+/*--- common ---*/
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  max-width: $container-max-width;
+
+  &.vertical {
+    flex-direction: column;
+  }
+}

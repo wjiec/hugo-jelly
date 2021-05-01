@@ -1,9 +1,10 @@
 @import "../includes/variables";
 
-.error {
+.notfound {
+  width: 100%;
+  user-select: none;
   text-align: center;
   margin-top: 50px;
-  width: 100%;
 
   h3 {
     margin: 0;

@@ -15,15 +15,15 @@
   --text-link-color: #{$light-text-link-color};
   --bg-primary-color: #{$light-bg-primary-color};
   --bg-secondary-color: #{$light-bg-secondary-color};
-  --scrollbar-bg-color: #{$light-scrollbar-bg-color};
-  --scrollbar-bg-color-025: rgba(#{$light-scrollbar-bg-color}, .025);
-  --scrollbar-bg-color-20: rgba(#{$light-scrollbar-bg-color}, .2);
-  --scrollbar-bg-color-25: rgba(#{$light-scrollbar-bg-color}, .25);
   --shadow-small: #{$light-shadow-small};
   --shadow-medium: #{$light-shadow-medium};
   --shadow-large: #{$light-shadow-large};
   --border-primary-color: #{$light-border-primary-color};
   --border-secondary-color: #{$light-border-secondary-color};
+  // scrollbar
+  --scrollbar-bg-color-track: rgba(#{$light-scrollbar-bg-color}, .02);
+  --scrollbar-bg-color-thumb: rgba(#{$light-scrollbar-bg-color}, .2);
+  --scrollbar-bg-color-thumb-active: rgba(#{$light-scrollbar-bg-color}, .25);
 }
 
 //noinspection DuplicatedCode
@@ -36,12 +36,15 @@
   --text-link-color: #{$dark-text-link-color};
   --bg-primary-color: #{$dark-bg-primary-color};
   --bg-secondary-color: #{$dark-bg-secondary-color};
-  --scrollbar-bg-color: #{$dark-scrollbar-bg-color};
   --shadow-small: #{$dark-shadow-small};
   --shadow-medium: #{$dark-shadow-medium};
   --shadow-large: #{$dark-shadow-large};
   --border-primary-color: #{$dark-border-primary-color};
   --border-secondary-color: #{$dark-border-secondary-color};
+  // scrollbar @TODO
+  --scrollbar-bg-color-track: rgba(#{$dark-scrollbar-bg-color}, .02);
+  --scrollbar-bg-color-thumb: rgba(#{$dark-scrollbar-bg-color}, .2);
+  --scrollbar-bg-color-thumb-active: rgba(#{$dark-scrollbar-bg-color}, .25);
 }
 
 :root[data-theme="github"] {

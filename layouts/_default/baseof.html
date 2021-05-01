@@ -14,14 +14,16 @@
     <div class="content-container">
       <main>{{- block "main" . -}}{{- end -}}</main>
     </div>
+    {{ if ne .Kind "404" }}
     <div class="footer-container">
       <footer>{{- partial "layouts/footer.html" . -}}</footer>
     </div>
+    {{ end }}
   </div>
 </div>
 
-{{- $buildOptions := (dict "targetPath" "js/main.js" "minify" true "target" "es2015") -}}
-{{- $js := resources.Get "javascript/highway.js" | js.Build $buildOptions -}}
+{{- $buildOptions := (dict "targetPath" "js/jelly.js" "minify" true "target" "es2015") -}}
+{{- $js := resources.Get "javascript/jelly.js" | js.Build $buildOptions -}}
 <script src="{{ $js.Permalink }}"></script>
 </body>
 </html>
