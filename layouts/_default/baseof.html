@@ -14,11 +14,11 @@
     <div class="content-container">
       <main>{{- block "main" . -}}{{- end -}}</main>
     </div>
-    {{ if ne .Kind "404" }}
+    {{- if ne .Kind "404" }}
     <div class="footer-container">
       <footer>{{- partial "layouts/footer.html" . -}}</footer>
     </div>
-    {{ end }}
+    {{- end }}
   </div>
 </div>
 

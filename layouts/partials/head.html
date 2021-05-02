@@ -2,16 +2,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="{{ .Site.Params.Description }}">
+  <meta name="description" content="{{ .Site.Params.description }}">
+  {{ $delimiter := "," -}}
+  <meta name="keywords" content="{{ delimit .Site.Params.keywords $delimiter }}">
   <meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline'; child-src 'none';">
   {{- $options := (dict "targetPath" "css/jelly.css") -}}
   {{- $style := resources.Get "scss/jelly.scss" | toCSS $options | minify | fingerprint "md5" }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
-  {{ if .IsHome }}
+  {{- if .IsHome }}
   <title>{{ .Site.Title }}</title>
-  {{ else if eq .Kind "404" }}
+  {{- else if eq .Kind "404" }}
   <title>Something went wrong | {{ .Site.Title }}</title>
-  {{ else }}
+  {{- else }}
   <title>{{ .Title }} | {{ .Site.Title }}</title>
-  {{ end }}
+  {{- end }}
 </head>

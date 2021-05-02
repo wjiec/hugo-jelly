@@ -1,17 +1,15 @@
-<div class="container">
-  <div>
-    {{ if .Site.Params.Author }}
+<div class="container vertical">
+  <div class="copyright">
+    {{- if .Site.Params.Author }}
     <span class="copyright">@{{ .Site.Params.Author }} {{ now.Format "2006" }}</span>
-    {{ end }}
-    {{ if .Site.Params.BestWishing }}
+    {{- end }}
+    {{- if .Site.Params.BestWishing }}
     <span class="best-wishing">{{ .Site.Params.bestWishing }}</span>
-    {{ end }}
+    {{- end }}
   </div>
-  <div>
-    {{ if .Site.Params.icpLicensing }}
-    <span class="icp-licensing">
-      <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">{{ .Site.Params.icpLicensing }}</a>
-    </span>
-    {{ end }}
+  <div class="icp-licensing">
+    {{- if .Site.Params.icpLicensing }}
+    <span><a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">{{ .Site.Params.icpLicensing }}</a></span>
+    {{- end }}
   </div>
 </div>
