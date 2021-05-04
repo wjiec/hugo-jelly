@@ -2,9 +2,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="{{ .Site.Params.description }}">
+  <meta name="description" content="{{ .Site.Params.Description }}">
   {{ $delimiter := "," -}}
-  <meta name="keywords" content="{{ delimit .Site.Params.keywords $delimiter }}">
+  <meta name="keywords" content="{{ delimit .Site.Params.Keywords $delimiter }}">
   <meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline'; child-src 'none';">
   {{- $options := (dict "targetPath" "css/jelly.css") -}}
   {{- $style := resources.Get "scss/jelly.scss" | toCSS $options | minify | fingerprint "md5" }}

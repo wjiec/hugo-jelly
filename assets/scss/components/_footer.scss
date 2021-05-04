@@ -18,12 +18,8 @@ footer {
     div {
       text-align: center;
 
-      span {
+      span:nth-child(n + 2) {
         margin-left: 20px;
-
-        &:first-child {
-          margin-left: 0;
-        }
       }
     }
   }

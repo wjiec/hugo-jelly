@@ -1,10 +1,16 @@
 @import "../includes/variables";
 
+.header-container {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
 header {
   user-select: none;
   height: $header-height;
   background-color: var(--bg-primary-color);
-  box-shadow: var(--shadow-small);
+  box-shadow: var(--shadow-medium);
   position: relative;
   overflow: hidden;
 
@@ -16,7 +22,7 @@ header {
     justify-content: space-between;
   }
 
-  .logo a {
+  .text-logo a {
     font-size: 20px;
     text-decoration: none;
     color: var(--text-primary-color);
@@ -32,25 +38,28 @@ header {
       display: inline-block;
       height: $header-height;
       color: var(--text-unactivated-color);
-      border-bottom: 4px solid transparent;
+      border-bottom: 5px solid transparent;
       transition: all .25s linear;
     }
 
-    a:hover, a.activate {
+    a:hover {
       text-decoration: none;
       color: var(--text-activated-color);
-      border-bottom: 4px solid var(--border-primary-color);
+      border-bottom: 5px solid var(--border-primary-color);
     }
   }
 
   .menu-item {
     float: left;
-    margin-left: 25px;
+
+    &:nth-child(n + 2) {
+      margin-left: 25px;
+    }
 
     &.active a {
       pointer-events: none;
       color: var(--text-activated-color);
-      border-bottom: 4px solid var(--text-link-color);
+      border-bottom: 5px solid var(--text-link-color);
     }
   }
 
@@ -81,7 +90,7 @@ header {
 
 @media screen and (max-width: $mobile-screen-width) {
   header {
-    .logo {
+    .text-logo {
       width: 100%;
       text-align: center;
     }
@@ -98,7 +107,7 @@ header {
 }
 
 @media screen and (max-width: 950px) {
-  .menu-item:last-child {
-    margin-right: 45px;
+  .menu {
+    margin-right: 50px;
   }
 }

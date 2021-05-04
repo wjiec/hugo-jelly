@@ -1,11 +1,6 @@
 <article>
   <div class="metadata container">
     <p class="datetime">{{ .Date.Format "January 2, 2006" }}</p>
-    <div class="tags">
-      {{- range .Params.tags -}}
-      <span class="tag"><a href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a></span>
-      {{- end -}}
-    </div>
   </div>
   <div class="content">
     <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>

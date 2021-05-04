@@ -1,8 +1,8 @@
 <div class="container vertical">
   <div class="article-list">
-  {{ range .Paginator.Pages }}
-    {{ partial "components/article.html" . }}
-  {{ end }}
+  {{- range .Paginator.Pages }}
+    {{- partial "components/article.html" . -}}
+  {{- end }}
   </div>
   {{ if gt .Paginator.TotalPages 1 }}
   <div class="pagination container">

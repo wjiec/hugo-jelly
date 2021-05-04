@@ -1,7 +1,7 @@
 <div class="container vertical">
   <div class="copyright">
     {{- if .Site.Params.Author }}
-    <span class="copyright">@{{ .Site.Params.Author }} {{ now.Format "2006" }}</span>
+    <span class="author">@{{ .Site.Params.Author }} {{ now.Format "2006" }}</span>
     {{- end }}
     {{- if .Site.Params.BestWishing }}
     <span class="best-wishing">{{ .Site.Params.bestWishing }}</span>

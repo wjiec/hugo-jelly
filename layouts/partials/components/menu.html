@@ -1,12 +1,12 @@
 <nav class="menu">
-  {{ $ctx := .ctx }}
-  {{ $menu := .menu }}
+  {{- $ctx := .ctx }}
+  {{- $menu := .menu }}
   <ul class="menu-list">
-    {{ range (index $ctx.Site.Menus $menu) }}
-    {{ $active := or ($ctx.IsMenuCurrent $menu .) ($ctx.HasMenuCurrent $menu .) (eq $ctx.RelPermalink .URL) }}
+    {{- range (index $ctx.Site.Menus $menu) }}
+    {{- $active := or ($ctx.IsMenuCurrent $menu .) ($ctx.HasMenuCurrent $menu .) (eq $ctx.RelPermalink .URL) }}
     <li class="menu-item {{ if $active }}active{{ end }}">
       <a href="{{ .URL }}">{{ .Name }}</a>
     </li>
-    {{ end }}
+    {{- end }}
   </ul>
 </nav>
