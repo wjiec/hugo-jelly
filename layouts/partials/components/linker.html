@@ -1,0 +1,6 @@
+<div class="linker">
+  <span class="text {{ if not .Ok }}disabled{{ end }}">{{ .Text }}</span>
+  {{- if .Ok -}}
+  <a href="{{ .Link.URL }}"></a>
+  {{- end -}}
+</div>

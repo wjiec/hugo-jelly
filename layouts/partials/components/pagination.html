@@ -1,0 +1,17 @@
+{{- if gt .Paginator.TotalPages 1 -}}
+<div class="pagination container">
+  <div class="previous">
+    {{- partial "components/linker.html" (dict "Text" "‹Prev" "Ok" .Paginator.HasPrev "Link" .Paginator.Prev) -}}
+  </div>
+  <div class="pagers">
+    {{- range .Paginator.Pagers -}}
+    <div class="page">
+      {{- partial "components/linker.html" (dict "Text" .PageNumber "Ok" true "Link" .) -}}
+    </div>
+    {{- end -}}
+  </div>
+  <div class="next">
+    {{- partial "components/linker.html" (dict "Text" "Next›" "Ok" .Paginator.HasNext "Link" .Paginator.Next) -}}
+  </div>
+</div>
+{{- end -}}

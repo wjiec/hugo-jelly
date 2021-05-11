@@ -4,7 +4,9 @@
     {{- partial "components/article.html" . -}}
   {{- end }}
   </div>
-  {{ if gt .Paginator.TotalPages 1 }}
+  {{- partial "components/pagination.html" . -}}
+
+  {{ if gt .Paginator.TotalPages 1000 }}
   <div class="pagination container">
     <a {{ if .Paginator.HasPrev }}href="{{ .Paginator.Prev.URL }}"{{ end }} class="prev">
       <svg width="24" viewBox="0 0 16 16">
