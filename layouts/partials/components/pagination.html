@@ -1,36 +1,60 @@
 {{- if gt .Paginator.TotalPages 1 -}}
+{{- $curr := .Paginator -}}
 <div class="pagination container">
-  <div class="previous">
-    {{- partial "components/linker.html" (dict "Text" "‹Prev" "Ok" .Paginator.HasPrev "Link" .Paginator.Prev) -}}
+  <div class="page previous">
+    {{- if $curr.HasPrev -}}
+      <div class="jumper active"><a href="{{ $curr.Prev.URL }}">‹Prev</a></div>
+    {{- else -}}
+      <div class="jumper"><span>‹Prev</span></div>
+    {{- end -}}
   </div>
-  <ul class="pagers" style="display: flex;flex-grow: 1;justify-content: space-around;margin: 0;list-style: none">
-    {{- $curr := .Paginator -}}
+  <ul class="pagers">
+    {{- $prevIndex := 3 -}} {{- $nextIndex := sub $curr.TotalPages 4 -}}
+    {{- $prevCount := cond (lt $curr.PageNumber $prevIndex) (sub 5 $curr.PageNumber) 1 -}}
+    {{- $nextCount := cond (gt $curr.PageNumber $nextIndex) (sub $curr.PageNumber $nextIndex) 1 -}}
 
     {{/* first */}} {{- $first := $curr.First -}}
-    {{- if ne $curr $curr.First -}}
+    {{- if ne $curr $first -}}
       <li class="page"><a href="{{ $first.URL }}">{{ $first.PageNumber }}</a></li>
     {{- end -}}
 
     {{/* previous skip */}}
-    {{- if gt $curr.PageNumber 2 -}}
+    {{- if and (gt $curr.PageNumber 2) (gt $curr.TotalPages 5) -}}
       <li class="page"><a href="{{ $curr.Prev.Prev.URL }}">&hellip;</a></li>
     {{- end -}}
 
-    {{/* previous */}} {{- $prev := $curr.Prev -}}
-    {{- if and ($curr.HasPrev) (ne $prev $curr.First) -}}
-      <li class="page"><a href="{{ $curr.Prev.URL }}">{{ $prev.PageNumber }}</a></li>
+    {{/* previous */}} {{ $previous := slice }}
+    {{- if $curr.HasPrev -}}
+      {{- $prev := $curr.Prev -}}
+      {{- range seq $nextCount -}}
+        {{- if and ($prev.HasPrev) (ne $prev $curr.First) -}}
+          {{- $previous = slice $prev | append $previous -}}
+          {{- $prev = $prev.Prev -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{/* render */}}
+      {{- range $previous -}}
+        <li class="page"><a href="{{ .URL }}">{{ .PageNumber }}</a></li>
+      {{- end -}}
     {{- end -}}
 
     {{/* current */}}
     <li class="page curr">{{ $curr.PageNumber }}</li>
 
-    {{/* next */}} {{- $next := $curr.Next -}}
-    {{- if and $next (ne $next $curr.Last) -}}
-      <li class="page"><a href="{{ $curr.Next.URL }}">{{ $next.PageNumber }}</a></li>
+    {{/* next */}}
+    {{- if $curr.HasNext -}}
+      {{- $next := $curr.Next -}}
+      {{- range seq $prevCount -}}
+        {{- if and ($next.HasNext) (ne $next $curr.Last) -}}
+          <li class="page"><a href="{{ $next.URL }}">{{ $next.PageNumber }}</a></li>
+          {{- $next = $next.Next -}}
+        {{- end -}}
+      {{- end -}}
     {{- end -}}
 
     {{/* next skip */}}
-    {{- if gt (sub $curr.TotalPages $curr.PageNumber) 2 -}}
+    {{- if and (gt (sub $curr.TotalPages $curr.PageNumber) 2) (gt $curr.TotalPages 5) -}}
       <li class="page"><a href="{{ $curr.Next.Next.URL }}">&hellip;</a></li>
     {{- end -}}
 
@@ -39,8 +63,12 @@
       <li class="page"><a href="{{ $curr.Last.URL }}">{{ $curr.Last.PageNumber }}</a></li>
     {{- end -}}
   </ul>
-  <div class="next">
-    {{- partial "components/linker.html" (dict "Text" "Next›" "Ok" .Paginator.HasNext "Link" .Paginator.Next) -}}
+  <div class="page next">
+    {{- if $curr.HasNext -}}
+      <div class="jumper active"><a href="{{ $curr.Next.URL }}">Next›</a></div>
+    {{- else -}}
+      <div class="jumper"><span>Next›</span></div>
+    {{- end -}}
   </div>
 </div>
 {{- end -}}

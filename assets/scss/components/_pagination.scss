@@ -1,6 +1,24 @@
 @import "../includes/variables";
 
 .pagination {
+  width: 100%;
   font-size: 18px;
   font-family: $monospaced-text-font-family;
+  margin: 30px auto;
+  text-align: center;
+  justify-content: space-around;
+  user-select: none;
+  color: var(--text-tertiary-color);
+
+  a {
+    color: var(--text-primary-color);
+  }
+
+  .pagers {
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+  }
 }

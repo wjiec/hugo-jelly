@@ -71,36 +71,6 @@ main {
   }
 }
 
-.pagination {
-  margin: 30px auto;
-  width: 100%;
-  text-align: center;
-  justify-content: space-around;
-  user-select: none;
-
-  a {
-    display: inline-block;
-    cursor: default;
-    color: var(--text-secondary-color);
-
-    &:hover {
-      text-decoration: none;
-    }
-
-    svg {
-      fill: var(--text-tertiary-color);
-    }
-
-    &[href] {
-      cursor: pointer;
-
-      svg {
-        fill: var(--text-primary-color);
-      }
-    }
-  }
-}
-
 @media screen and(max-width: $mobile-screen-width) {
   main article {
     .metadata {
